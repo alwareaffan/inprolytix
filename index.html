@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inprolytix | Data & Business Intelligence Platform</title>
+
+    <meta name="description" content="Inprolytix: A leading data and business intelligence platform for actionable insights, predictive analytics, and digital transformation. Empowering your data ecosystem.">
+    <meta name="robots" content="index, follow">
+    <meta name="keywords" content="Data Analytics, Business Intelligence, Predictive Analytics, Digital Transformation, Tech Ecosystem, Data Platform, AI, Machine Learning, Data Strategy, Inprolytix">
+    <link rel="canonical" href="https://inprotax.com/home-page-url">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    
+    <style>
+        /* --- General Reset & Variables --- */
+        :root {
+            --primary-color: #0d0d0d; /* Deep Dark Background */
+            --secondary-color: #1a1a1a; /* Section Background */
+            --accent-color: #ffd64f; /* Modern Gold/Yellow Accent */
+            --text-light: #f0f0f0;
+            --text-faded: #a0a0a0;
+            --card-bg: rgba(20, 20, 20, 0.75);
+            --border-color: #333;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--primary-color);
+            color: var(--text-light);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* --- Global Structure & Typography --- */
+        .section {
+            padding: 80px 20px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 40px;
+            color: var(--accent-color);
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-weight: 800;
+        }
+
+        .subheading {
+            font-size: 20px;
+            color: var(--text-faded);
+            margin-bottom: 50px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.5;
+        }
+
+        /* --- Animated Background Canvas --- */
+        #bg-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 0;
+            opacity: 0.8;
+            filter: brightness(0.9);
+        }
+
+        /* --- 1. HERO SECTION (Above the fold) --- */
+        #hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding-top: 50px; /* Account for potential fixed nav */
+        }
+
+        .logo-large {
+            width: 450px; 
+            max-width: 90vw;
+            margin-bottom: 30px;
+            filter: drop-shadow(0 0 15px rgba(255, 214, 79, 0.5));
+            animation: fadeInDown 1s ease-out;
+            transition: transform 0.4s;
+        }
+
+        .logo-large:hover {
+            transform: scale(1.02);
+        }
+
+        .hero-tagline {
+            font-size: 56px;
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            background: linear-gradient(90deg, #fff, var(--accent-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: fadeInUp 1s ease-out 0.2s forwards;
+            opacity: 0;
+        }
+
+        .hero-text {
+            font-size: 24px;
+            color: var(--text-faded);
+            margin-bottom: 40px;
+            max-width: 800px;
+            animation: fadeInUp 1s ease-out 0.4s forwards;
+            opacity: 0;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: var(--primary-color);
+            padding: 15px 40px;
+            font-size: 18px;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 10px 20px rgba(255, 214, 79, 0.3);
+            animation: fadeInUp 1s ease-out 0.6s forwards;
+            opacity: 0;
+        }
+
+        .cta-button:hover {
+            background-color: #ffe89e;
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(255, 214, 79, 0.5);
+        }
+
+        /* --- 2. SERVICES/ECOSYSTEM SECTION --- */
+        #ecosystem {
+            background-color: var(--secondary-color);
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .ecosystem-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .service-card {
+            background: rgba(30, 30, 30, 0.8);
+            padding: 30px;
+            border-radius: 12px;
+            text-align: left;
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+            border-color: var(--accent-color);
+        }
+
+        .service-card i {
+            font-size: 40px;
+            color: var(--accent-color);
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .service-card h3 {
+            font-size: 22px;
+            color: var(--text-light);
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .service-card p {
+            color: var(--text-faded);
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        /* --- 3. CONTACT SECTION (Reusing previous styles) --- */
+        #contact {
+            padding-bottom: 100px;
+        }
+
+        /* Reusing contact-container styles from the previous request */
+        .contact-container {
+            background: var(--card-bg);
+            padding: 50px 40px;
+            border-radius: 18px;
+            max-width: 420px;
+            width: 90%;
+            margin: 50px auto 0;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7); 
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            z-index: 2;
+            backdrop-filter: blur(15px);
+            transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        .contact-container:hover {
+            transform: scale(1.02) translateY(-5px);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.9);
+        }
+
+        .contact-container h1 {
+            font-size: 38px;
+            color: var(--accent-color);
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-weight: 900;
+        }
+
+        .catchy-message {
+            font-size: 16px;
+            color: var(--text-faded);
+            font-weight: 400;
+            margin-bottom: 35px;
+            line-height: 1.6;
+        }
+
+        .contact-info p {
+            color: var(--text-light);
+            font-size: 18px;
+            margin: 18px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            font-weight: 300;
+            letter-spacing: 0.5px;
+        }
+
+        .contact-info i {
+            color: var(--accent-color);
+            font-size: 20px;
+            width: 20px;
+            text-align: center;
+        }
+
+        .contact-info a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .contact-info a:hover {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        /* --- Footer Styling --- */
+        .footer {
+            padding: 20px;
+            border-top: 1px solid var(--border-color);
+            color: var(--text-faded);
+            font-size: 15px;
+            text-align: center;
+            background: var(--secondary-color);
+            position: relative;
+            z-index: 10;
+        }
+
+        .footer a {
+            color: var(--accent-color);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer a:hover {
+            color: #fff;
+            text-decoration: underline;
+        }
+
+        /* --- Global Animations (Reusable) --- */
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* --- Media Queries --- */
+        @media (max-width: 768px) {
+            h2 {
+                font-size: 32px;
+            }
+            .hero-tagline {
+                font-size: 40px;
+            }
+            .hero-text {
+                font-size: 18px;
+            }
+            .section {
+                padding: 60px 15px;
+            }
+            .contact-container h1 {
+                font-size: 30px;
+            }
+        }
+        @media (max-width: 480px) {
+            .logo-large {
+                width: 80vw;
+            }
+            .hero-tagline {
+                font-size: 30px;
+            }
+            .service-card {
+                text-align: center;
+            }
+            .service-card i {
+                margin: 0 auto 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <canvas id="bg-canvas"></canvas>
+
+    <section id="hero" class="section">
+        <div class="container">
+            <img src="/assets/images/Inprolytix.png" alt="Inprolytix Logo" class="logo-large">
+
+            <h1 class="hero-tagline">
+                Turning Data Into Strategic Advantage.
+            </h1>
+
+            <p class="hero-text">
+                Your end-to-end data ecosystem platform: From predictive analytics to actionable business intelligence for unmatched growth.
+            </p>
+
+            <a href="#ecosystem" class="cta-button">Explore Our Ecosystem <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </section>
+
+    <section id="ecosystem" class="section">
+        <div class="container">
+            <h2>The Inprolytix Ecosystem</h2>
+            <p class="subheading">
+                We provide integrated solutions covering the full data lifecycle, ensuring scalability and precision at every step.
+            </p>
+
+            <div class="ecosystem-grid">
+                <div class="service-card">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Predictive Analytics</h3>
+                    <p>Leverage AI and ML models to forecast market trends, predict customer churn, and optimize resource allocation with high accuracy.</p>
+                </div>
+                
+                <div class="service-card">
+                    <i class="fas fa-database"></i>
+                    <h3>Custom BI Platforms</h3>
+                    <p>Design and implement bespoke Business Intelligence solutions, providing real-time dashboards and reporting tailored to your KPIs.</p>
+                </div>
+                
+                <div class="service-card">
+                    <i class="fas fa-rocket"></i>
+                    <h3>Digital Strategy & Transformation</h3>
+                    <p>Guide your organization's journey to data-driven decision-making, integrating cutting-edge technology across all business functions.</p>
+                </div>
+
+                <div class="service-card">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Data Governance & Compliance</h3>
+                    <p>Ensure data quality, security, and regulatory compliance (GDPR, CCPA) throughout your entire data pipeline and ecosystem.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section">
+        <div class="container">
+            <h2>Ready to Transform Your Data?</h2>
+            <p class="subheading">
+                Let's discuss how Inprolytix can build a smarter, more efficient data strategy for your business.
+            </p>
+            
+            <div class="contact-container">
+                <h1>Get In Touch</h1>
+                <p class="catchy-message">
+                    Have a project in mind? Or just want to say hello? We are all ears!
+                </p>
+
+                <div class="contact-info">
+                    <p><i class="fas fa-phone"></i> +91 98332 12099</p>
+                    <p><i class="fas fa-envelope"></i> <a href="mailto:info@inprotax.com">info@inprotax.com</a></p>
+                    <p><i class="fas fa-map-marker-alt"></i> Navi Mumbai, India</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        &copy; 2025 Inprolytix. All rights reserved. | <a href="https://inprotax.com/" target="_blank">Privacy Policy</a>
+    </footer>
+
+    <script>
+        const canvas = document.getElementById('bg-canvas');
+        const ctx = canvas.getContext('2d');
+        let w = canvas.width = window.innerWidth;
+        let h = canvas.height = window.innerHeight;
+
+        const ACCENT_COLOR = '#ffd64f'; 
+        const MAX_DIST = 180;
+        const nodeCount = 60; 
+
+        const nodes = [];
+
+        function initializeNodes() {
+            nodes.length = 0;
+            for (let i = 0; i < nodeCount; i++) {
+                nodes.push({
+                    x: Math.random() * w,
+                    y: Math.random() * h,
+                    vx: (Math.random() - 0.5) * 0.3,
+                    vy: (Math.random() - 0.5) * 0.3,
+                    radius: Math.random() * 1.5 + 0.5,
+                    color: ACCENT_COLOR
+                });
+            }
+        }
+
+        function animate() {
+            ctx.fillStyle = 'rgba(13, 13, 13, 0.15)'; 
+            ctx.fillRect(0, 0, w, h);
+
+            nodes.forEach((node, idx) => {
+                // Update position and wrap around edges
+                node.x += node.vx;
+                node.y += node.vy;
+                if (node.x < 0) node.x = w;
+                if (node.x > w) node.x = 0;
+                if (node.y < 0) node.y = h;
+                if (node.y > h) node.y = 0;
+
+                // Draw nodes
+                ctx.beginPath();
+                ctx.arc(node.x, node.y, node.radius, 0, Math.PI * 2);
+                ctx.fillStyle = node.color;
+                ctx.fill();
+
+                // Draw connecting lines
+                for (let j = idx + 1; j < nodes.length; j++) {
+                    const otherNode = nodes[j];
+                    let dx = node.x - otherNode.x;
+                    let dy = node.y - otherNode.y;
+                    let dist = Math.sqrt(dx * dx + dy * dy);
+
+                    if (dist < MAX_DIST) {
+                        ctx.beginPath();
+                        ctx.strokeStyle = `rgba(255, 214, 79, ${0.5 * (1 - dist / MAX_DIST)})`; 
+                        ctx.lineWidth = 0.5;
+                        ctx.moveTo(node.x, node.y);
+                        ctx.lineTo(otherNode.x, otherNode.y);
+                        ctx.stroke();
+                    }
+                }
+            });
+
+            requestAnimationFrame(animate);
+        }
+
+        window.addEventListener('resize', () => {
+            w = canvas.width = window.innerWidth;
+            h = canvas.height = window.innerHeight;
+            initializeNodes();
+        }, { passive: true });
+
+        initializeNodes();
+        animate();
+    </script>
+
+</body>
+</html>
