@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inprolytix | Where Systems Meet Precision</title>
+    <title>Inprolytix | Data & Business Intelligence Platform</title>
 
     <meta name="description" content="Inprolytix: A leading data and business intelligence platform for actionable insights, predictive analytics, and digital transformation. Empowering your data ecosystem.">
     <meta name="robots" content="index, follow">
-    <meta name="keywords" content="Data Analytics, Business Intelligence, Predictive Analytics, Digital Transformation, Tech Ecosystem, Data Platform, AI, Machine Learning, Data Strategy, Inprolytix">
+    <meta name="keywords" content="Data Analytics, Business Intelligence, Predictive Analytics, Digital Transformation, Tech Ecosystem, Data Platform, AI, Machine Learning, Data Strategy, Inprolytix, Core Insurance Systems, ERP, Payment Gateway Integration">
     <link rel="canonical" href="https://inprotax.com/home-page-url">
     
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
@@ -74,6 +74,13 @@
             margin-right: auto;
             line-height: 1.5;
         }
+        
+        /* --- Separator Line --- */
+        .separator {
+            border: 0;
+            height: 1px;
+            background-image: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+        }
 
         /* --- Animated Background Canvas --- */
         #bg-canvas {
@@ -85,7 +92,7 @@
             filter: brightness(0.9);
         }
 
-        /* --- 1. HERO SECTION (Above the fold) --- */
+        /* --- 1. HERO SECTION --- */
         #hero {
             min-height: 100vh;
             display: flex;
@@ -93,17 +100,17 @@
             justify-content: center;
             align-items: center;
             text-align: center;
-            padding-top: 50px; /* Account for potential fixed nav */
+            padding-top: 50px; 
         }
 
         .logo-large {
             width: 450px; 
             max-width: 90vw;
             margin-bottom: 30px;
-            filter: drop-shadow(0 0 15px rgba(255, 214, 79, 0.5));
             animation: fadeInDown 1s ease-out;
             transition: transform 0.4s;
         }
+		<!-- filter: drop-shadow(0 0 15px rgba(255, 214, 79, 0.5)); -->
 
         .logo-large:hover {
             transform: scale(1.02);
@@ -113,6 +120,7 @@
             font-size: 56px;
             font-weight: 900;
             line-height: 1.1;
+			margin-top: 50px;
             margin-bottom: 20px;
             background: linear-gradient(90deg, #fff, var(--accent-color));
             -webkit-background-clip: text;
@@ -152,13 +160,51 @@
             box-shadow: 0 15px 30px rgba(255, 214, 79, 0.5);
         }
 
-        /* --- 2. SERVICES/ECOSYSTEM SECTION --- */
-        #ecosystem {
-            background-color: var(--secondary-color);
-            border-top: 1px solid var(--border-color);
-            border-bottom: 1px solid var(--border-color);
+        <!-- /* --- 2. VALUE PROPOSITION --- */ -->
+        <!-- #differentiator { -->
+            <!-- background-color: var(--secondary-color); -->
+        <!-- } -->
+
+        .differentiator-grid {
+            display: flex;
+            justify-content: space-around;
+            gap: 30px;
+            margin-top: 50px;
+            flex-wrap: wrap;
         }
 
+        .value-card {
+            max-width: 350px;
+            padding: 30px;
+            border-radius: 12px;
+            background: rgba(30, 30, 30, 0.8);
+            border: 1px solid var(--border-color);
+            transition: box-shadow 0.3s;
+        }
+
+        .value-card:hover {
+            box-shadow: 0 0 20px rgba(255, 214, 79, 0.3);
+        }
+
+        .value-card i {
+            font-size: 50px;
+            color: var(--accent-color);
+            margin-bottom: 20px;
+        }
+
+        .value-card h3 {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .value-card p {
+            color: var(--text-faded);
+            line-height: 1.6;
+        }
+
+
+        /* --- 3. ECOSYSTEM (Services) --- */
         .ecosystem-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -201,12 +247,125 @@
             line-height: 1.6;
         }
 
-        /* --- 3. CONTACT SECTION (Reusing previous styles) --- */
+        /* --- 4. TESTIMONIALS --- */
+        #testimonials {
+			background-color: var(--secondary-color);
+            <!-- background-color: var(--primary-color); -->
+        }
+		
+		#ecosystem {
+			background-color: var(--secondary-color);
+            <!-- background-color: var(--primary-color); -->
+        }
+		
+        .testimonial-grid {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 50px;
+            flex-wrap: wrap;
+        }
+
+        .testimonial-card {
+            max-width: 350px;
+            padding: 30px;
+            border-radius: 12px;
+            background: rgba(30, 30, 30, 0.8);
+            border-left: 5px solid var(--accent-color);
+            text-align: left;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        .quote-text {
+            font-style: italic;
+            font-size: 17px;
+            line-height: 1.6;
+            color: var(--text-light);
+            margin-bottom: 20px;
+        }
+
+        .client-info {
+            font-weight: 700;
+            color: var(--accent-color);
+        }
+
+        .client-info span {
+            display: block;
+            font-weight: 400;
+            font-size: 14px;
+            color: var(--text-faded);
+            margin-top: 5px;
+        }
+
+        /* --- 5. TECH STACK --- */
+        #tech-stack {
+            background-color: var(--primary-color);
+			<!-- background-color: var(--secondary-color); -->
+        }
+
+        .tech-logos {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .logo-group h3 {
+            color: var(--text-light);
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        .logo-group {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            border-radius: 8px;
+            background: rgba(30, 30, 30, 0.8);
+            border: 1px solid var(--border-color);
+            min-width: 250px;
+        }
+
+        .tech-logo {
+            width: 80px;
+            height: 80px;
+            background-color: #fff; /* Placeholder for logos */
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 40px;
+            color: #000;
+            margin: 10px;
+            transition: transform 0.3s;
+        }
+        
+        .tech-logo:hover {
+            transform: scale(1.1);
+        }
+
+        /* Adjust icons for logo placeholder */
+        .tech-logo .fa-cloud { background: #1a1a1a; color: #4285f4; }
+        .tech-logo .fa-chart-pie { background: #1a1a1a; color: #0078d4; }
+        .tech-logo .fa-server { background: #1a1a1a; color: #62a9f9; }
+        .tech-logo .fa-cubes { background: #1a1a1a; color: #FF9900; }
+        
+        .logo-row {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* --- 6. CONTACT SECTION (Reusing previous styles) --- */
         #contact {
             padding-bottom: 100px;
         }
 
-        /* Reusing contact-container styles from the previous request */
         .contact-container {
             background: var(--card-bg);
             padding: 50px 40px;
@@ -297,6 +456,49 @@
             color: #fff;
             text-decoration: underline;
         }
+		
+		/* --- NEW: Floating Icon Styles --- */
+        .floating-icon {
+            position: fixed;
+            bottom: 30px;
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+            color: var(--primary-color);
+            z-index: 100;
+            cursor: pointer;
+            transition: transform 0.3s, opacity 0.3s, background-color 0.3s;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+        }
+
+        .floating-icon:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.8);
+        }
+
+        /* WhatsApp Icon (Bottom Left) */
+        #whatsapp-float {
+            left: 30px;
+            background-color: #00AC1F; /* WhatsApp Green */
+			text-decoration: none;
+        }
+
+		#top-float {
+            right: 30px;
+            background-color: var(--accent-color);
+            /* Initially hidden, shown by JS when scrolling */
+            opacity: 0; 
+            pointer-events: none; 
+        }
+		
+		#top-float.show {
+            opacity: 1;
+            pointer-events: auto;
+        }
 
         /* --- Global Animations (Reusable) --- */
         @keyframes fadeInDown {
@@ -310,6 +512,19 @@
         }
 
         /* --- Media Queries --- */
+        @media (max-width: 900px) {
+            .differentiator-grid, .testimonial-grid {
+                flex-direction: column;
+                align-items: center;
+            }
+            .value-card, .testimonial-card {
+                max-width: 90%;
+            }
+            .tech-logos {
+                gap: 20px;
+            }
+        }
+
         @media (max-width: 768px) {
             h2 {
                 font-size: 32px;
@@ -326,33 +541,40 @@
             .contact-container h1 {
                 font-size: 30px;
             }
-        }
-        @media (max-width: 480px) {
-            .logo-large {
-                width: 80vw;
-            }
-            .hero-tagline {
-                font-size: 30px;
-            }
             .service-card {
                 text-align: center;
             }
             .service-card i {
                 margin: 0 auto 15px;
             }
+            .logo-group {
+                min-width: 90%;
+            }
+			
+			#whatsapp-float { left: 20px; }
+            #top-float { right: 20px; }
+			
         }
     </style>
 </head>
 <body>
 
     <canvas id="bg-canvas"></canvas>
+	
+	<!-- <a href="https://wa.me/919833212099?text=Hello%20Inprolytix,%20I%20am%20interested%20in%20your%20services." target="_blank" class="floating-icon" id="whatsapp-float"> -->
+        <!-- <i class="fab fa-whatsapp" style="color: white;"></i> -->
+    <!-- </a> -->
+
+    <button class="floating-icon" id="top-float" onclick="scrollToTop()">
+        <i class="fas fa-arrow-up"></i>
+    </button>
 
     <section id="hero" class="section">
         <div class="container">
-            <img src="https://www.inprotax.com/assets/images/Inprolytix.png" alt="Inprolytix Logo" class="logo-large">
+            <img src="gold.png" alt="Inprolytix Logo" class="logo-large">
 
             <h1 class="hero-tagline">
-                Turning Data Into Strategic Advantage.
+                Turning Business Into Strategic Advantage.
             </h1>
 
             <p class="hero-text">
@@ -363,11 +585,13 @@
         </div>
     </section>
 
+    <hr class="separator">
+
     <section id="ecosystem" class="section">
         <div class="container">
             <h2>The Inprolytix Ecosystem</h2>
             <p class="subheading">
-                We provide integrated solutions covering the full data lifecycle, ensuring scalability and precision at every step.
+                We provide integrated solutions covering the full data lifecycle, ensuring scalability and precision across your core business systems.
             </p>
 
             <div class="ecosystem-grid">
@@ -390,17 +614,153 @@
                 </div>
 
                 <div class="service-card">
+                    <i class="fas fa-hand-holding-usd"></i>
+                    <h3>Core Insurance Systems</h3>
+                    <p>Modernization and data integration for policy administration, claims processing, and underwriting platforms to drive operational efficiency.</p>
+                </div>
+                
+                <div class="service-card">
+                    <i class="fas fa-industry"></i>
+                    <h3>ERP Systems Integration</h3>
+                    <p>Connecting data from SAP, Oracle, and other ERP systems into your BI environment for a unified view of finance, operations, and supply chain.</p>
+                </div>
+
+                <div class="service-card">
+                    <i class="fas fa-credit-card"></i>
+                    <h3>Payment Gateway Solutions</h3>
+                    <p>Seamless integration and secure data pipeline creation for major payment gateways, ensuring accurate transaction reporting and fraud analysis.</p>
+                </div>
+
+                <div class="service-card">
                     <i class="fas fa-shield-alt"></i>
                     <h3>Data Governance & Compliance</h3>
                     <p>Ensure data quality, security, and regulatory compliance (GDPR, CCPA) throughout your entire data pipeline and ecosystem.</p>
+                </div>
+                
+                <div class="service-card">
+					<!-- style="opacity: 0.5;" -->
+                    <i class="fas fa-sync-alt"></i>
+                    <h3>End-to-End Scalability</h3>
+                    <p>From initial consultation to final deployment, we build architectures that scale seamlessly with your future business demands.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <hr class="separator">
+	
+	<section id="differentiator" class="section">
+        <div class="container">
+            <h2>Our Data-First Advantage</h2>
+            <p class="subheading">
+                We don't just process data; we engineer intelligent systems that guarantee precision, speed, and competitive edge.
+            </p>
+
+            <div class="differentiator-grid">
+                
+                <div class="value-card">
+                    <i class="fas fa-cubes"></i>
+                    <h3>Integrated Ecosystem</h3>
+                    <p>We don't just connect systems; we **unify** your data sources (ERP, Insurance, Payments) into a single, cohesive intelligence platform.</p>
+                </div>
+                
+                <div class="value-card">
+                    <i class="fas fa-brain"></i>
+                    <h3>Predictive Intelligence</h3>
+                    <p>Move beyond retrospective reporting. Our proprietary AI/ML models turn historical data into **actionable forecasts** for strategic planning.</p>
+                </div>
+                
+                <div class="value-card">
+                    <i class="fas fa-tachometer-alt"></i>
+                    <h3>Agile Deployment</h3>
+                    <p>Rapid implementation methodologies ensure a **faster time-to-value**, minimizing disruption and accelerating your digital transformation journey.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <hr class="separator">
+
+    <section id="testimonials" class="section">
+        <div class="container">
+            <h2>What Our Clients Say</h2>
+            <p class="subheading">
+                Quantifiable results and trusted partnerships define the Inprolytix experience.
+            </p>
+
+            <div class="testimonial-grid">
+                
+                <div class="testimonial-card">
+                    <p class="quote-text">"Inprolytix streamlined our core insurance system data flow, leading to a **25% faster claims resolution** and significant cost savings. The results were immediate and impactful."</p>
+                    <p class="client-info">Sarah Jenson
+                        <span>Head of Operations, Fictional Insurance Co.</span>
+                    </p>
+                </div>
+                
+                <div class="testimonial-card">
+                    <p class="quote-text">"Their integration of our ERP data was flawless. We now have **real-time visibility** into our supply chain—a true competitive advantage we lacked before."</p>
+                    <p class="client-info">Rajiv Sharma
+                        <span>Chief Financial Officer, Global Manufacturing Firm</span>
+                    </p>
+                </div>
+
+                <div class="testimonial-card">
+                    <p class="quote-text">"The predictive analytics models they built for our customer churn reduced our acquisition spend by 15%. This team delivers **predictive intelligence**, not just reports."</p>
+                    <p class="client-info">Amelia Clark
+                        <span>VP of Marketing, E-commerce Solutions</span>
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <hr class="separator">
+
+    <section id="tech-stack" class="section">
+        <div class="container">
+            <h2>Our Technology & Expertise</h2>
+            <p class="subheading">
+                We are experts in the industry-leading platforms required to build a resilient and powerful data ecosystem.
+            </p>
+
+            <div class="tech-logos">
+                <div class="logo-group">
+                    <h3>Cloud Platforms</h3>
+                    <div class="logo-row">
+                        <div class="tech-logo"><i class="fab fa-aws" style="color:#FF9900;"></i></div>
+                        <div class="tech-logo"><i class="fab fa-microsoft" style="color:#0078D4;"></i></div>
+                        <div class="tech-logo"><i class="fab fa-google" style="color:#4285F4;"></i></div>
+                    </div>
+                </div>
+                
+                <div class="logo-group">
+                    <h3>BI & Analytics</h3>
+                    <div class="logo-row">
+                        <div class="tech-logo"><i class="fas fa-chart-bar" style="color:#F77E1F;"></i></div>
+                        <div class="tech-logo"><i class="fas fa-chart-pie" style="color:#008080;"></i></div>
+                        <div class="tech-logo"><i class="fas fa-sitemap" style="color:#800080;"></i></div>
+                    </div>
+                </div>
+
+                <div class="logo-group">
+                    <h3>Data Warehousing</h3>
+                    <div class="logo-row">
+                        <div class="tech-logo"><i class="fas fa-snowflake" style="color:#28A4C4;"></i></div>
+                        <div class="tech-logo"><i class="fas fa-server" style="color:#336791;"></i></div>
+                        <div class="tech-logo"><i class="fas fa-database" style="color:#4479A1;"></i></div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <hr class="separator">
+
     <section id="contact" class="section">
         <div class="container">
-            <h2>Ready to Transform Your Data?</h2>
+            <h2>Ready to Transform Your Business?</h2>
             <p class="subheading">
                 Let's discuss how Inprolytix can build a smarter, more efficient data strategy for your business.
             </p>
@@ -413,15 +773,16 @@
 
                 <div class="contact-info">
                     <p><i class="fas fa-phone"></i> +91 98332 12099</p>
+					<p><i class="fab fa-whatsapp" style="font-size: 24px;"></i> <a href="https://wa.me/919833212099?text=Hello%20Inprolytix,%20I%20am%20interested%20in%20your%20services." target="_blank">Click here to say "Hi"</a></p>
                     <p><i class="fas fa-envelope"></i> <a href="mailto:info@inprolytix.com">info@inprolytix.com</a></p>
-                    <p><i class="fas fa-map-marker-alt"></i>Mumbai, India</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Mumbai, India</p>
                 </div>
             </div>
         </div>
     </section>
 
     <footer class="footer">
-        &copy; 2025 Inprolytix Private Ltd. All rights reserved.</a>
+        &copy; 2025 Inprolytix. All rights reserved. | <a href="privacy.html">Privacy Policy</a>
     </footer>
 
     <script>
@@ -498,11 +859,28 @@
 
         initializeNodes();
         animate();
+		
+		// --- Go to Top Button Script (NEW) ---
+        const topButton = document.getElementById("top-float");
+
+        // Function to scroll to the top of the document
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+        
+        // Show/hide the button based on scroll position
+        window.onscroll = function() {
+            if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
+                topButton.classList.add("show");
+            } else {
+                topButton.classList.remove("show");
+            }
+        };
+		
     </script>
 
 </body>
-
 </html>
-
-
-
