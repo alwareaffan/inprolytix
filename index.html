@@ -87,6 +87,12 @@
             color: var(--text-light);
         }
 
+        /* NEW: Default Desktop Navigation (links are inline) */
+        .header-nav {
+            display: flex;
+            align-items: center;
+        }
+
         .header-nav a {
             color: var(--text-faded);
             text-decoration: none;
@@ -124,6 +130,27 @@
             border-bottom: none !important;
         }
 
+        /* NEW: Hamburger button (hidden on desktop) */
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--accent-color);
+            font-size: 24px;
+            cursor: pointer;
+            z-index: 1000; /* Ensure it's above the menu */
+            padding: 10px;
+            transition: color 0.3s;
+        }
+
+        .menu-toggle:hover {
+            color: var(--text-light);
+        }
+
+        .menu-toggle i {
+            pointer-events: none; /* Prevents icon click from overriding button click */
+        }
+        
         /* --- Global Structure & Typography --- */
         .section {
             padding: 80px 20px;
@@ -598,6 +625,80 @@
             .service-card i {
                 margin: 0 auto 15px;
             }
+
+            /* NEW: Mobile Header/Nav Setup */
+            .header-nav {
+                display: none; /* Hide the desktop links by default */
+            }
+
+            .header-container {
+                /* Keep header items aligned on one row for mobile */
+                flex-direction: row; 
+                justify-content: space-between;
+            }
+            
+            .menu-toggle {
+                display: block; /* Show the hamburger button */
+            }
+            
+            /* Off-Canvas Menu Styling */
+            .header-nav {
+                /* Override initial desktop 'display: none' */
+                display: flex; 
+                flex-direction: column; /* Stack links vertically */
+                position: fixed;
+                top: 0;
+                right: 0;
+                height: 100vh;
+                width: 70%; /* Menu takes up 70% of the screen */
+                max-width: 350px;
+                background-color: var(--secondary-color);
+                padding-top: 80px; /* Space for the fixed header */
+                z-index: 999;
+                
+                /* Start off-screen */
+                transform: translateX(100%);
+                transition: transform 0.3s ease-out;
+                
+                /* Add a subtle shadow */
+                box-shadow: -5px 0 15px rgba(0, 0, 0, 0.5);
+            }
+            
+            /* Menu Active State - Slides into view */
+            .header-nav[data-visible="true"] {
+                transform: translateX(0);
+            }
+
+            /* Style the links inside the mobile menu */
+            .header-nav a {
+                width: 100%; /* Full width links */
+                margin: 0;
+                padding: 15px 20px;
+                text-align: left;
+                border-bottom: 1px solid var(--border-color);
+                font-size: 18px;
+            }
+            
+            .header-nav a:hover,
+            .header-nav a:focus {
+                background-color: rgba(255, 255, 255, 0.05);
+                border-bottom: 1px solid var(--border-color); /* Maintain border */
+            }
+            
+            /* Style the CTA button within the mobile menu */
+            .header-cta {
+                margin-top: 20px;
+                align-self: flex-start;
+                width: auto;
+				border-bottom: 1px solid #ffd64f !important;
+				margin-left: 0px !important;
+            }
+			<!-- margin-left: 20px !important; -->
+            
+            /* Toggle Icon Animation (Hamburger <-> X) */
+            .menu-toggle[aria-expanded="true"] .fa-bars:before {
+                content: "\f00d"; /* Font Awesome 'times' icon (X) */
+            }
         }
 
         @media (max-width: 768px) {
@@ -620,32 +721,18 @@
                 min-width: 90%;
             }
             
-            /* Mobile Header Adjustments */
-            .header-container {
-                flex-direction: column;
+            .header-logo {
+                z-index: 1001; /* Keep logo visible above menu */
             }
-            .header-nav {
-                margin-top: 10px;
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-            .header-nav a {
-                margin: 5px 10px;
-                font-size: 14px;
-            }
-            .header-cta {
-                margin-top: 10px;
-                order: 1; 
-            }
-            
+
             #whatsapp-float { left: 20px; }
             #top-float { right: 20px; }
-			
-			.header-nav{
-				display: none;
-			}
-            
+        }
+		
+		.love-note {
+            margin-top: 10px;
+            font-size: 14px;
+            color: #555; /* Faded color */
         }
     </style>
 </head>
@@ -657,7 +744,11 @@
         <div class="header-container">
             <a href="index.html" class="header-logo"><img src="gold.png" style="height: 40px;" /></a>
             
-            <nav class="header-nav">
+            <button class="menu-toggle" aria-controls="mobile-nav" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <nav class="header-nav" id="mobile-nav" data-visible="false">
                 <a href="#ecosystem">Ecosystem</a>
                 <a href="#differentiator">Advantage</a>
                 <a href="#testimonials">Clients</a>
@@ -678,8 +769,6 @@
 
     <section id="hero" class="section">
         <div class="container-main">
-            <!-- <a href="index.html"><img src="gold.png" alt="Inprolytix Logo" class="logo-large" /></a> -->
-
             <h1 class="hero-tagline">
                 Turning Business Into Strategic Advantage
             </h1>
@@ -879,16 +968,31 @@
 
                 <div class="contact-info">
                     <p><i class="fas fa-phone"></i> +91 98332 12099</p>
-                    <p><i class="fab fa-whatsapp" style="font-size: 24px;"></i> <a href="https://wa.me/919833212099?text=Hello%20Inprolytix,%20I%20am%20interested%20in%20your%20services." target="_blank">Click here to say "Hi"</a></p>
+                    <!-- <p><i class="fab fa-whatsapp" style="font-size: 24px;"></i> <a href="https://wa.me/919833212099?text=Hello%20Inprolytix,%20I%20am%20interested%20in%20your%20services." target="_blank">Click here to say "Hi"</a></p> -->
                     <p><i class="fas fa-envelope"></i> <a href="mailto:info@inprolytix.com">info@inprolytix.com</a></p>
-                    <p><i class="fas fa-map-marker-alt"></i> Mumbai, India</p>
+                    <!-- <p><i class="fas fa-map-marker-alt"></i> Mumbai, India</p> -->
                 </div>
+				
+				<div class="social-links">
+					<a style="color: #FFF;font-size: 22px;margin: 10px;" href="https://wa.me/919833212099?text=Hello%20Inprolytix,%20I%20am%20interested%20in%20your%20services." target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+					<a style="color: #FFF;font-size: 22px;margin: 10px;" href="https://linkedin.com/company/inprolytix" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+					<a style="color: #FFF;font-size: 22px;margin: 10px;" href="#" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+					<a style="color: #FFF;font-size: 22px;margin: 10px;" href="#" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+				</div>
+				
+				<hr class="separator" style="background-image: linear-gradient(to right, rgb(135, 135, 135), rgb(255, 255, 255), rgb(135, 135, 135));margin-top: 20px;margin-bottom: 20px;">
+				
+				<p style="font-size: 14px;color: grey;">
+                    516, Juhi Niharika Mirage, Plot 274, Sector 10, Kharghar, Navi Mumbai (410210), Maharashtra, India
+                </p>
+				
             </div>
         </div>
     </section>
 
     <footer class="footer">
-        &copy; 2025 Inprolytix Private Limited. All rights reserved. | <a href="privacy.html">Privacy Policy</a>
+        &copy; 2025 Inprolytix Private Limited. All rights reserved.<br />
+		<p class="love-note">Brought to life with ❤ by Inprolytix</p>
     </footer>
 
     <script>
@@ -985,8 +1089,55 @@
                 topButton.classList.remove("show");
             }
         };
+
+        // --- NEW: Mobile Menu Toggle Script ---
+        const menuToggle = document.querySelector('.menu-toggle');
+        const primaryNavigation = document.getElementById('mobile-nav');
+
+        menuToggle.addEventListener('click', () => {
+            // Check the current state (is it visible?)
+            const isVisible = primaryNavigation.getAttribute('data-visible') === 'true';
+
+            // Toggle the state
+            primaryNavigation.setAttribute('data-visible', !isVisible);
+            
+            // Toggle the aria-expanded attribute for accessibility and CSS icon change
+            menuToggle.setAttribute('aria-expanded', !isVisible);
+        });
+        
+        // OPTIONAL: Close menu when a link is clicked (useful for single-page apps)
+        primaryNavigation.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                primaryNavigation.setAttribute('data-visible', 'false');
+                menuToggle.setAttribute('aria-expanded', 'false');
+            });
+        });
         
     </script>
+	
+	<script type="application/ld+json">
+		{
+		  "@context": "https://schema.org",
+		  "@type": "TechnologyConsulting",
+		  "name": "Inprolytix",
+		  "url": "https://www.inprolytix.com",
+		  "logo": "https://www.inprolytix.com/gold.png",
+		  "description": "End-to-end data intelligence and digital transformation consulting. Specializing in predictive analytics, BI platforms, and integration of core insurance, ERP, and payment systems.",
+		  "areaServed": ["Mumbai", "Navi Mumbai", "India", "Global"],
+		  "address": {
+			"@type": "PostalAddress",
+			"addressLocality": "Mumbai",
+			"addressRegion": "MH",
+			"addressCountry": "IN"
+		  },
+		  "contactPoint": {
+			"@type": "ContactPoint",
+			"telephone": "+91-9833212099",
+			"contactType": "customer service",
+			"areaServed": "IN"
+		  }
+		}
+	</script>
 
 </body>
 </html>
