@@ -4,18 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us | Inprolytix</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     
     <style>
-        /* --- Core Styles from Main Site (Inprolytix Theme) --- */
+        /* --- Core Styles (Matching the new Index.html Theme) --- */
         :root {
-            --primary-color: #0d0d0d; /* Deep Dark Background */
-            --secondary-color: #1a1a1a; /* Section Background */
-            --accent-color: #ffd64f; /* Modern Gold/Yellow Accent */
-            --text-light: #f0f0f0;
-            --text-faded: #a0a0a0;
-            --border-color: #333;
+            --primary-color: #090E1A; /* Deep Navy Background */
+            --secondary-color: #141C2B; /* Container Background */
+            --accent-color: #00F0FF; /* Vibrant Cyan Accent */
+            --text-light: #E0E7FF; /* Off-White Text */
+            --text-faded: #A0AEC0; /* Light Grey Faded Text */
+            --border-color: rgba(0, 240, 255, 0.2);
         }
 
         * {
@@ -33,30 +34,34 @@
         }
 
         .container {
-            max-width: 1200px; /* Slightly narrower for focus */
+            max-width: 800px; /* Adjusted max width for better focus on contact details */
             margin: 0 auto;
             padding: 0 20px;
             background: var(--secondary-color);
-            border-radius: 10px;
-            padding: 40px;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+            border-radius: 12px; /* Smoother corners */
+            padding: 50px; /* Increased padding */
+            /* Matching the high-tech shadow from index.html contact section */
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8), 0 0 15px rgba(0, 240, 255, 0.4);
+            border: 1px solid var(--border-color);
         }
 
         /* --- Typography & Headers --- */
         h1 {
-            font-size: 36px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 38px;
             color: var(--accent-color);
             border-bottom: 3px solid var(--accent-color);
             padding-bottom: 10px;
             margin-bottom: 30px;
             text-transform: uppercase;
-            font-weight: 800;
-            text-align: center; /* Center the main title */
+            font-weight: 900;
+            text-align: center; 
+            letter-spacing: 1px;
         }
         
         .updated-time {
             color: var(--text-faded);
-            font-size: 14px;
+            font-size: 15px;
             margin-bottom: 40px;
             text-align: center;
         }
@@ -64,53 +69,92 @@
         /* --- Contact Item Styles --- */
         .info-item {
             margin-bottom: 30px;
-            border-left: 4px solid var(--accent-color);
-            padding-left: 20px;
+            /* Changed border from left bar to a box glow effect */
+            border: 1px solid var(--border-color);
+            padding: 20px;
+            border-radius: 8px;
+            background: rgba(0, 240, 255, 0.03);
+            transition: box-shadow 0.3s, border-color 0.3s;
         }
         
-        .info-item:last-child {
-            margin-bottom: 0;
+        .info-item:hover {
+            box-shadow: 0 0 15px rgba(0, 240, 255, 0.15);
+            border-color: rgba(0, 240, 255, 0.4);
         }
 
         .info-label {
             font-weight: 700;
-            color: var(--text-light); /* Labels are light text */
+            color: var(--text-light);
             font-size: 18px;
             display: flex;
             align-items: center;
             margin-bottom: 5px;
+            font-family: 'Montserrat', sans-serif;
         }
         
         .info-label i {
-            color: var(--accent-color); /* Icons are gold */
-            margin-right: 10px;
-            font-size: 20px;
+            color: var(--accent-color);
+            margin-right: 15px;
+            font-size: 22px;
+            width: 25px; /* Fixed width for alignment */
         }
 
         .info-value {
             color: var(--text-faded);
             font-size: 16px;
             display: block;
-            margin-top: 5px;
+            margin-top: 10px;
+            padding-left: 40px; /* Aligned with icon text */
         }
         
         .info-value a {
             color: var(--accent-color);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .info-value a:hover {
+            color: var(--text-light);
         }
 
         /* --- Footer (Simple link back) --- */
         .footer-link {
             text-align: center;
             margin-top: 40px;
-            font-size: 14px;
+            font-size: 16px;
         }
         
+        .footer-link a {
+            color: var(--accent-color) !important;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 8px 15px;
+            border-radius: 4px;
+            transition: color 0.3s, background-color 0.3s;
+        }
+        
+        .footer-link a:hover {
+            color: var(--primary-color) !important;
+            background-color: var(--accent-color);
+        }
+        
+        @media (max-width: 600px) {
+            .container {
+                padding: 30px;
+            }
+            h1 {
+                font-size: 30px;
+            }
+            .info-label {
+                font-size: 16px;
+            }
+        }
     </style>
 </head>
 <body>
 
-    <div class="footer-link" style="max-width: 1200px; margin: 0 auto 20px auto; text-align: left;">
-        <a href="index.html" style="color: #ffd64f;">← Back to Inprolytix Home</a>
+    <div class="footer-link" style="max-width: 800px; margin: 0 auto 20px auto; text-align: left;">
+        <a href="index.html">← Back to Inprolytix Home</a>
     </div>
 
     <div class="container">
@@ -153,7 +197,7 @@
     </div>
 
     <div class="footer-link">
-        <a href="index.html" style="color: #ffd64f;">← Back to Inprolytix Home</a>
+        <a href="index.html">← Back to Inprolytix Home</a>
     </div>
 
 </body>

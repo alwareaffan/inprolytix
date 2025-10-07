@@ -3,18 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy | Inprolytix</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <title>Terms & Conditions | Inprolytix</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     
     <style>
-        /* --- Core Styles from Main Site --- */
+        /* --- Core Styles (Matching the new Index.html Theme) --- */
         :root {
-            --primary-color: #0d0d0d; 
-            --secondary-color: #1a1a1a; 
-            --accent-color: #ffd64f; 
-            --text-light: #f0f0f0;
-            --text-faded: #a0a0a0;
+            --primary-color: #090E1A; 
+            --secondary-color: #141C2B; 
+            --accent-color: #00F0FF; 
+            --text-light: #E0E7FF;
+            --text-faded: #A0AEC0;
+            --border-color: rgba(0, 240, 255, 0.2);
         }
 
         * {
@@ -32,40 +34,46 @@
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 1000px;
             margin: 0 auto;
             padding: 0 20px;
             background: var(--secondary-color);
-            border-radius: 10px;
-            padding: 40px;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+            border-radius: 12px;
+            padding: 50px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8), 0 0 15px rgba(0, 240, 255, 0.4);
+            border: 1px solid var(--border-color);
         }
 
         /* --- Typography --- */
         h1 {
-            font-size: 36px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 38px;
             color: var(--accent-color);
             border-bottom: 3px solid var(--accent-color);
             padding-bottom: 10px;
             margin-bottom: 30px;
             text-transform: uppercase;
-            font-weight: 800;
+            font-weight: 900;
         }
 
         h2 {
-            font-size: 24px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 28px;
             color: var(--text-light);
-            margin-top: 30px;
+            margin-top: 40px;
             margin-bottom: 15px;
-            font-weight: 700;
+            font-weight: 800;
+            border-left: 5px solid var(--accent-color);
+            padding-left: 15px;
         }
         
         h3 {
-            font-size: 18px;
+            font-family: 'Inter', sans-serif;
+            font-size: 20px;
             color: var(--accent-color);
-            margin-top: 20px;
+            margin-top: 25px;
             margin-bottom: 10px;
-            font-weight: 600;
+            font-weight: 700;
         }
 
         p {
@@ -74,14 +82,28 @@
         }
 
         ul {
-            list-style: disc;
+            list-style: none;
             margin-left: 20px;
             margin-bottom: 20px;
+            padding-left: 10px;
         }
         
         ul li {
-            margin-bottom: 8px;
+            margin-bottom: 12px;
             color: var(--text-faded);
+            position: relative;
+            padding-left: 20px;
+        }
+        
+        ul li::before {
+            content: "\f058"; 
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            color: var(--accent-color);
+            position: absolute;
+            left: 0;
+            top: 2px;
+            font-size: 14px;
         }
 
         strong {
@@ -96,22 +118,51 @@
         }
 
         a:hover {
-            color: #fff;
+            color: var(--text-light);
             text-decoration: underline;
+        }
+        
+        .updated-time {
+            color: var(--text-faded);
+            font-size: 15px;
+            margin-bottom: 40px;
         }
 
         /* --- Footer (Simple link back) --- */
         .footer-link {
             text-align: center;
             margin-top: 40px;
-            font-size: 14px;
+            font-size: 16px;
+        }
+        
+        .footer-link a {
+            color: var(--accent-color) !important;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 8px 15px;
+            border-radius: 4px;
+            transition: color 0.3s, background-color 0.3s;
+        }
+        
+        .footer-link a:hover {
+            color: var(--primary-color) !important;
+            background-color: var(--accent-color);
+        }
+        
+        @media (max-width: 600px) {
+             h1 {
+                font-size: 30px;
+            }
+            h2 {
+                font-size: 22px;
+            }
         }
     </style>
 </head>
 <body>
 
-    <div class="footer-link" style="max-width: 1200px; margin: 0 auto 20px auto; text-align: left;">
-        <a href="index.html"style="color: #ffd64f;">← Back to Inprolytix Home</a>
+    <div class="footer-link" style="max-width: 1000px; margin: 0 auto 20px auto; text-align: left;">
+        <a href="index.html">← Back to Inprolytix Home</a>
     </div>
 
     <div class="container">
@@ -162,12 +213,12 @@
 
             <h2>7. Contact Information</h2>
             <p>All concerns or communications relating to these Terms must be communicated to us using the contact information provided on this website.</p>
-			<p><a href="contact-pay.html" style="color: #ffd64f;">Click here to see the contact details!</a></p>
+			<p><a href="contact-pay.html">Click here to see the contact details!</a></p>
         </div>
     </div>
 
     <div class="footer-link">
-        <a href="index.html" style="color: #ffd64f;">← Back to Inprolytix Home</a>
+        <a href="index.html">← Back to Inprolytix Home</a>
     </div>
 
 </body>
